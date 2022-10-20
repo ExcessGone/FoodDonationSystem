@@ -2,16 +2,16 @@ Mobile App Dev - App Brainstorming Example
 ===
 
 ## Favorite Existing Apps - List
-5. Slack  
-6. FitOn 
-7. Webtoon 
-8. Discord 
-9. Canvas
-10. Geneva 
-11. Twitter  
-12. ChickFilA app 
-13. SoloLearn  
-14. What3Words  
+1. Slack  
+2. FitOn 
+3. Webtoon 
+4. Discord 
+5. Canvas
+6. Geneva 
+7. Twitter  
+8. ChickFilA app 
+9. SoloLearn  
+10. What3Words  
 
 ## Favorite Existing Apps - Categorize and Evaluate
 
