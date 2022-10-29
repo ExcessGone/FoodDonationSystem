@@ -28,17 +28,23 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 **Required Features**
 
-* Use GoogleMap API to find homeles shelter near the Restaurant
-* Use navgiation bar to navigate from the maps page, to the food given database fragment, and then add a form using a second activity.
-* Form must include ability to use camera, restaurant name, food type. 
-* Add database for restaurant's profile
+- [ ] Create layouts - activities & fragment: 
+* activity home has two fragments: map and history with navigation bar included. 
+* three activities: home activity, form activity, detail activity.
+
+- [ ] Use GoogleMap API to find homeles shelter near the Restaurant
+
+
+- [ ] Add database for restaurant's profile
+* Use firebase
+
 
 **Stretch Features**
 
-* Chat between shelter and restaurant
-* Bar graph analysing types of foods being donated from different restaurants
-* turn navigation bar to hamburger menu
-* food API to add to list 
+- [ ] Chat between shelter and restaurant
+- [ ] Bar graph analysing types of foods being donated from different restaurants
+- [ ] turn navigation bar to hamburger menu
+- [ ] food API to add to list 
 
 ### 2. Screen Archetypes
 
