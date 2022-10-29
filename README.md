@@ -37,6 +37,7 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 - [ ] Add database for restaurant's profile
 * Use firebase
+* Create data to show past food given in the fragment of history
 
 
 **Stretch Features**
