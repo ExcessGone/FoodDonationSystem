@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HistoryFragment">
+
+
+
+
+    <ImageButton
+        android:backgroundTint="@color/purple_500"
+        android:background="@drawable/roundstyle"
+        android:id="@+id/addForm"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/add"
+        android:layout_width="50dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="550dp"/>
+
+
+
+
+
+<!--   <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/RV"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp" />-->
+
+</FrameLayout>
