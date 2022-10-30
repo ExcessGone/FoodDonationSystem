@@ -5,9 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".HistoryFragment">
 
-
-
-
     <ImageButton
         android:backgroundTint="@color/purple_500"
         android:background="@drawable/roundstyle"

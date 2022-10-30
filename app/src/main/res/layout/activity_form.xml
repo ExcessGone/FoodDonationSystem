@@ -12,33 +12,32 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/toolbar"
             android:background="@color/purple_200"
-            app:title="Form"
-            app:titleTextColor="@android:color/white"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Form"
+            app:titleTextColor="@android:color/white" />
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textNameInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="16dp"
-            android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="24dp"
+            android:layout_marginRight="16dp"
             android:hint="restaurant name"
             app:helperText="required"
             app:helperTextTextColor="@color/purple_700"
-            app:startIconDrawable="@drawable/restaurant"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:startIconDrawable="@drawable/restaurant">
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -49,19 +48,19 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textPhoneInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/textNameInputLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
             android:hint="phone number"
             app:helperText="required"
-            app:startIconDrawable="@drawable/phone"
             app:helperTextTextColor="@color/purple_700"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textNameInputLayout"
+            app:startIconDrawable="@drawable/phone">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textPhoneField"
@@ -72,19 +71,19 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textAddressInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/textPhoneInputLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
             android:hint="address"
             app:helperText="required"
-            app:startIconDrawable="@drawable/location"
             app:helperTextTextColor="@color/purple_700"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textPhoneInputLayout"
+            app:startIconDrawable="@drawable/location">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textAddressField"
@@ -94,42 +93,67 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textFoodInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/textAddressInputLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:hint="food: ie. sushi, falafel, cheese pizza"
-        app:helperText="required"
-        app:helperTextTextColor="@color/purple_700"
-        app:startIconDrawable="@drawable/food"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textFoodField"
+            android:id="@+id/textFoodInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="food: ie. sushi, falafel, cheese pizza"
+            app:helperText="required"
+            app:helperTextTextColor="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textAddressInputLayout"
+            app:startIconDrawable="@drawable/food">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textFoodField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/submitBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Submit Form"
-            app:layout_constraintTop_toBottomOf="@id/textFoodInputLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:text="Submit Form"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageFood" />
 
+
+     <!--   <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/pictureBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="250dp"
+            android:layout_marginBottom="208dp"
+            android:background="@drawable/roundstyle"
+            android:src="@drawable/camera"
+            app:layout_anchor="@id/imageFood"
+            app:layout_anchorGravity="bottom|right|end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />-->
+
+        <ImageView
+            android:id="@+id/imageFood"
+            android:layout_width="350dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textFoodInputLayout"
+            app:srcCompat="@drawable/food"
+            app:startIconDrawable="@drawable/food" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 
-<!--
-camera will be added-->
+
