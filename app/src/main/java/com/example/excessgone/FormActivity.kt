@@ -9,11 +9,7 @@ import android.text.TextUtils
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.lifecycleScope
 import com.example.excessgone.databinding.ActivityFormBinding
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 
 class FormActivity : AppCompatActivity() {
@@ -66,14 +62,13 @@ class FormActivity : AppCompatActivity() {
             {
                 binding.textAddressInputLayout.isErrorEnabled = false
                 binding.textFoodInputLayout.error = "Enter Food Type"
+                Toast.makeText(this, "Add picture of the food.", Toast.LENGTH_SHORT).show()
             }
             else
             {
                 binding.textFoodInputLayout.isErrorEnabled = false
-                // allows the user to change activities from form to main.
                 val i = Intent(this@FormActivity, MainActivity::class.java)
                 startActivity(i)
-
             }
         }
     }
