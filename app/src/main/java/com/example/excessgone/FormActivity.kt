@@ -6,14 +6,12 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.TextUtils
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.example.excessgone.databinding.ActivityFormBinding
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -23,7 +21,7 @@ class FormActivity : AppCompatActivity() {
     // variables
     private lateinit var binding : ActivityFormBinding
     lateinit var imageView: ImageView
-    lateinit var button: Button
+    lateinit var button: ImageButton
     val REQUEST_IMAGE_CAPTURE = 100
 
 
@@ -34,9 +32,9 @@ class FormActivity : AppCompatActivity() {
         initViews()
 
         imageView = findViewById(R.id.imageFood)
-        //button = findViewById(R.id.pictureBtn)
+        button = findViewById(R.id.pictureBtn)
 
-      /*  button.setOnClickListener {
+        button.setOnClickListener {
             val takePicI = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
 
             try {
@@ -44,7 +42,7 @@ class FormActivity : AppCompatActivity() {
             } catch (e: ActivityNotFoundException) {
                 Toast.makeText(this, "Error: " + e.localizedMessage, Toast.LENGTH_SHORT).show()
             }
-        }*/
+        }
     }
 
     // this funtion validates the form, not allowing the user to submit an empty form.

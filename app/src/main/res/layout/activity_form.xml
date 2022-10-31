@@ -33,7 +33,7 @@
             android:layout_marginRight="16dp"
             android:hint="restaurant name"
             app:helperText="required"
-            app:helperTextTextColor="@color/purple_700"
+            app:helperTextTextColor="@color/purple_200"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -56,7 +56,7 @@
             android:layout_marginRight="16dp"
             android:hint="phone number"
             app:helperText="required"
-            app:helperTextTextColor="@color/purple_700"
+            app:helperTextTextColor="@color/purple_200"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textNameInputLayout"
@@ -79,7 +79,7 @@
             android:layout_marginRight="16dp"
             android:hint="address"
             app:helperText="required"
-            app:helperTextTextColor="@color/purple_700"
+            app:helperTextTextColor="@color/purple_200"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textPhoneInputLayout"
@@ -102,7 +102,7 @@
             android:layout_marginRight="16dp"
             android:hint="food: ie. sushi, falafel, cheese pizza"
             app:helperText="required"
-            app:helperTextTextColor="@color/purple_700"
+            app:helperTextTextColor="@color/purple_200"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textAddressInputLayout"
@@ -127,20 +127,17 @@
             app:layout_constraintTop_toBottomOf="@id/imageFood" />
 
 
-     <!--   <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        <ImageButton
             android:id="@+id/pictureBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="250dp"
-            android:layout_marginBottom="208dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="160dp"
             android:background="@drawable/roundstyle"
             android:src="@drawable/camera"
-            app:layout_anchor="@id/imageFood"
-            app:layout_anchorGravity="bottom|right|end"
+            android:backgroundTint="@color/purple_200"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />-->
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/imageFood"
