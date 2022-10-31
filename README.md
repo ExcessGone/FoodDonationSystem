@@ -28,7 +28,7 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 **Required Features**
 
-- [ ] Create layouts - activities & fragment: 
+- [X] Create layouts - activities & fragment: 
 * activity home has two fragments: map and history with navigation bar included. 
 * three activities: home activity, form activity, detail activity.
 
