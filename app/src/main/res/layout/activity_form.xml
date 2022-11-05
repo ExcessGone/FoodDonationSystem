@@ -24,24 +24,24 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textNameInputLayout"
+            android:id="@+id/textShelterNameInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginRight="16dp"
-            android:hint="restaurant name"
+            android:hint="shelter name"
             app:helperText="required"
             app:helperTextTextColor="@color/purple_200"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:startIconDrawable="@drawable/restaurant">
+            app:startIconDrawable="@drawable/home">
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textNameField"
+                android:id="@+id/textShelterNameField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -59,7 +59,7 @@
             app:helperTextTextColor="@color/purple_200"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textNameInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textShelterNameInputLayout"
             app:startIconDrawable="@drawable/phone">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -100,7 +100,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:hint="food: ie. sushi, falafel, cheese pizza"
+            android:hint="food type"
             app:helperText="required"
             app:helperTextTextColor="@color/purple_200"
             app:layout_constraintEnd_toEndOf="parent"
@@ -132,7 +132,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
-            android:layout_marginBottom="160dp"
+            android:layout_marginBottom="200dp"
             android:background="@drawable/roundstyle"
             android:src="@drawable/camera"
             android:backgroundTint="@color/purple_200"

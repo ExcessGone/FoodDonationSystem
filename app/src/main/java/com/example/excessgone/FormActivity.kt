@@ -45,12 +45,12 @@ class FormActivity : AppCompatActivity() {
     private fun initViews()
     {
         binding.submitBtn.setOnClickListener{ view ->
-            if(TextUtils.isEmpty(binding.textNameField.text.toString())) {
-                binding.textNameInputLayout.error = "Enter Name"
+            if(TextUtils.isEmpty(binding.textShelterNameField.text.toString())) {
+                binding.textShelterNameInputLayout.error = "Enter Name"
             }
             else if(TextUtils.isEmpty(binding.textPhoneField.text.toString()))
             {
-                binding.textNameInputLayout.isErrorEnabled = false
+                binding.textShelterNameInputLayout.isErrorEnabled = false
                 binding.textPhoneInputLayout.error = "Enter Phone"
             }
             else if(TextUtils.isEmpty(binding.textAddressField.text.toString()))
