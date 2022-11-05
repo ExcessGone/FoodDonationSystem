@@ -88,3 +88,7 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 [Add picture of your hand sketched wireframes in this section]
 <img src="wireframe.jpg" width=600>
+
+## GIFs of Milestones
+
+<img src='MileStone2GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
