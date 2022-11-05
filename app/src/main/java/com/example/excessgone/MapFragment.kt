@@ -64,7 +64,8 @@ class MapFragment : Fragment() {
 
 
             val googlePlex = CameraPosition.builder()
-                .target(LatLng(37.4219999, -122.0862462))
+                    //
+                .target(LatLng(33.7420, -117.8236))
                 .zoom(10f)
                 .bearing(0f)
                 .tilt(45f)
@@ -186,11 +187,10 @@ class MapFragment : Fragment() {
    /* private fun getUrl(latitude: Double, longitude: Double, typePlace: String): String {
 
         val googlePlaceUrl = StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json")
-        googlePlaceUrl.append("?keyword=cruise&location=$latitude,$longitude")
+        googlePlaceUrl.append("?keyword=homeless&location=$latitude,$longitude")
         googlePlaceUrl.append("&radius=10000") // 10 km
-        googlePlaceUrl.append("&type=$typePlace")
+        googlePlaceUrl.append("&type=homeless")
         googlePlaceUrl.append("&key=AIzaSyD6GxLmTFb6A-O0MSVAQqJxZWyY5pMeFdU")
-
         Log.d("URL DEBUG XXX", googlePlaceUrl.toString())
         return googlePlaceUrl.toString()
     }*/
