@@ -209,7 +209,7 @@ class MapFragment : Fragment() {
                 latitude = mLastLocation.latitude
                 longitude = mLastLocation.longitude
 
-                val latLng = LatLng(latitude,longitude)
+                val latLng = LatLng(33.7420,-117.8236)
                 val markerOptions = MarkerOptions()
                     .position(latLng)
                     .title("Your position")
