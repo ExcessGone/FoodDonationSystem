@@ -1,86 +1,103 @@
 package com.example.excessgone
-
-import android.content.ActivityNotFoundException
+import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
 import android.os.Bundle
-import android.provider.MediaStore
 import android.text.TextUtils
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.excessgone.databinding.ActivityFormBinding
-
+import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class FormActivity : AppCompatActivity() {
 
-    // variables
-    private lateinit var binding : ActivityFormBinding
-    lateinit var imageView: ImageView
-    lateinit var button: ImageButton
-    val REQUEST_IMAGE_CAPTURE = 100
+    companion object{
+        const val REQUEST_FROM_CAMERA = 1001
+    }
 
+    private var storage: StorageReference? = null
+    private lateinit var database : DatabaseReference
+    private lateinit var binding : ActivityFormBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_form)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_form)
-        initViews()
+        binding = ActivityFormBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        imageView = findViewById(R.id.imageFood)
-        button = findViewById(R.id.pictureBtn)
+      storage = FirebaseStorage.getInstance().reference
+        database = FirebaseDatabase.getInstance().getReference("Forms")
+        binding = ActivityFormBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+       binding = DataBindingUtil.setContentView(this, R.layout.activity_form)
 
-        button.setOnClickListener {
-            val takePicI = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-
-            try {
-                startActivityForResult(takePicI, REQUEST_IMAGE_CAPTURE)
-            } catch (e: ActivityNotFoundException) {
-                Toast.makeText(this, "Error: " + e.localizedMessage, Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    // this funtion validates the form, not allowing the user to submit an empty form.
-    private fun initViews()
-    {
-        binding.submitBtn.setOnClickListener{ view ->
-            if(TextUtils.isEmpty(binding.textShelterNameField.text.toString())) {
+        initUI()
+        binding.submitBtn.setOnClickListener {
+            if (TextUtils.isEmpty(binding.textShelterNameField.text.toString())) {
                 binding.textShelterNameInputLayout.error = "Enter Name"
-            }
-            else if(TextUtils.isEmpty(binding.textPhoneField.text.toString()))
-            {
+            } else if (TextUtils.isEmpty(binding.textPhoneField.text.toString())) {
                 binding.textShelterNameInputLayout.isErrorEnabled = false
                 binding.textPhoneInputLayout.error = "Enter Phone"
-            }
-            else if(TextUtils.isEmpty(binding.textAddressField.text.toString()))
-            {
+            } else if (TextUtils.isEmpty(binding.textAddressField.text.toString())) {
                 binding.textPhoneInputLayout.isErrorEnabled = false
                 binding.textAddressInputLayout.error = "Enter Address"
-            }
-            else if(TextUtils.isEmpty(binding.textFoodField.text.toString()))
-            {
+            } else if (TextUtils.isEmpty(binding.textFoodField.text.toString())) {
                 binding.textAddressInputLayout.isErrorEnabled = false
                 binding.textFoodInputLayout.error = "Enter Food Type"
                 Toast.makeText(this, "Add picture of the food.", Toast.LENGTH_SHORT).show()
-            }
-            else
-            {
+            } else {
                 binding.textFoodInputLayout.isErrorEnabled = false
-                val i = Intent(this@FormActivity, MainActivity::class.java)
-                startActivity(i)
+                val shelterName = binding.textShelterNameField.text.toString()
+                val phoneNum = binding.textPhoneField.text.toString()
+                val address = binding.textAddressField.text.toString()
+                val foodType = binding.textFoodField.text.toString()
+                val form = Forms(shelterName, phoneNum, address, foodType)
+
+                    database.child(shelterName).setValue(form).addOnSuccessListener {
+
+                        binding.textShelterNameField.text?.clear()
+                        binding.textPhoneField.text?.clear()
+                        binding.textAddressField.text?.clear()
+                        binding.textFoodField.text?.clear()
+
+                        Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()
+                        val i = Intent(this@FormActivity, MainActivity::class.java)
+                        startActivity(i)
+                    }.addOnFailureListener {
+                        Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(resultCode == Activity.RESULT_OK){
+            when(requestCode){
+                REQUEST_FROM_CAMERA->{
+                    binding.imageFood.setImageURI(data!!.data)
+                    FirebaseStorageManager().uploadImage(this, data.data!!)
+                }
             }
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
-            val imageBitmap = data?.extras?.get("data") as Bitmap
-            imageView.setImageBitmap(imageBitmap)
-        }
-        else
-        {
-            super.onActivityResult(requestCode, resultCode, data)
+    private fun initUI() {
+        binding.pictureBtn.setOnClickListener{
+            captureImageUsingCamera()
         }
     }
+
+    private fun captureImageUsingCamera(){
+        ImagePicker.with(this).cameraOnly().crop().start(REQUEST_FROM_CAMERA)
+    }
 }
+
+

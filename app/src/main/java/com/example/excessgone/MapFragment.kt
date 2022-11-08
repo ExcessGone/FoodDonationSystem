@@ -5,19 +5,26 @@ import android.location.Location
 import android.os.Build
 import android.os.Bundle
 import android.os.Looper
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import com.example.excessgone.Common.Common
+import com.example.excessgone.Model.MyPlaces
+import com.example.excessgone.Remote.IGoogleAPIService
 import com.example.excessgone.databinding.FragmentMapBinding
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class MapFragment : Fragment() {
@@ -33,7 +40,6 @@ class MapFragment : Fragment() {
     lateinit var locationRequest: LocationRequest
     lateinit var locationCallback: LocationCallback
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -42,10 +48,12 @@ class MapFragment : Fragment() {
     companion object {
         private const val MY_PERMISSION_CODE : Int = 1000;
     }
+
     //
-    //lateinit var mService:IGoogleAPIService
-    //internal lateinit var  currentPlace:MyPlaces
+    lateinit var mService: IGoogleAPIService
+    internal lateinit var  currentPlace:MyPlaces
     //
+
 
     @SuppressLint("MissingPermission")
     override fun onCreateView(
@@ -53,10 +61,10 @@ class MapFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val rootView = inflater.inflate(R.layout.fragment_map, null, false)
+        val rootView = inflater.inflate(R.layout.fragment_map, container, false)
 
         val mapFragment =
-            childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
+            childFragmentManager.findFragmentById(R.id.mapXML) as SupportMapFragment?
 
         mapFragment!!.getMapAsync { googleMap ->
             mMap = googleMap
@@ -71,14 +79,21 @@ class MapFragment : Fragment() {
                 .tilt(45f)
                 .build()
 
+
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 10000, null)
+            mMap.addMarker(
+                MarkerOptions()
+                    .position(LatLng(33.7420, -117.8236))
+                    .title("Your position")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+            )
         }
         //
-
         // Init Service
-        //mService = Common.googleApiService
+         mService = Common.googleApiService
 
         //
+
 
         //Request runtime permission
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -117,9 +132,9 @@ class MapFragment : Fragment() {
 
 
         //
-        //nearByPlace("restaurants")
 
 
+        nearByPlace("homeless")
         //
 
         return rootView
@@ -127,75 +142,73 @@ class MapFragment : Fragment() {
     }
 
 
-  /* private fun nearByPlace(typePlace: String) {
+    private fun nearByPlace(typePlace: String) {
         // clear all marker on Map
-
-     //   mMap.clear()
+        //mMap.clear()
 
         // build URL Request base on location
-        val url = getUrl(latitude, longitude, typePlace)
-        mService.getNearbyPlaces(url)
-            .enqueue(object : Callback<MyPlaces> {
-                override fun onResponse(call: Call<MyPlaces>?, response: Response<MyPlaces>) {
-                    currentPlace = response.body()!!
+      mService = Common.googleApiService
+      val url = getUrl(latitude, longitude, "homeless")
+      mService.getNearbyPlaces(url)
+          .enqueue(object : Callback<MyPlaces> {
+              override fun onResponse(call: Call<MyPlaces>?, response: Response<MyPlaces>) {
+                  currentPlace = response.body()!!
 
-                    if (response!!.isSuccessful) {
-
-
-                        for (i in 0 until response!!.body()!!.results!!.size) {
-                            val markerOptions = MarkerOptions()
-                            val googlePlace = response.body()!!.results!![i]
-                            val lat = googlePlace.geometry!!.location!!.lat
-                            val lng = googlePlace.geometry!!.location!!.lng
-                            val placeName = googlePlace.name
-                            val latLng = LatLng(lat, lng)
-
-                            markerOptions.position(latLng)
-                            markerOptions.title(placeName)
-                            if (typePlace.equals("restaurants"))
-                                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.maps))
-                            else
-                                markerOptions.icon(
-                                    BitmapDescriptorFactory.defaultMarker(
-                                        BitmapDescriptorFactory.HUE_BLUE
-                                    )
-                                )
-
-                            markerOptions.snippet(i.toString()) // assign index
-
-                            // add marker to map
-                            mMap!!.addMarker(markerOptions)
+                  if (response!!.isSuccessful) {
 
 
-                            // Move camera
-                            mMap!!.moveCamera(
-                                CameraUpdateFactory.newLatLng(latLng))
+                      for (i in 0 until response!!.body()!!.results!!.size) {
+                          val markerOptions = MarkerOptions()
+                          val googlePlace = response.body()!!.results!![i]
+                          val lat = googlePlace.geometry!!.location!!.lat
+                          val lng = googlePlace.geometry!!.location!!.lng
+                          val placeName = googlePlace.name
+                          val latLng = LatLng(lat, lng)
 
-                            mMap!!.animateCamera(CameraUpdateFactory.zoomTo(17f))
+                          markerOptions.position(latLng)
+                          markerOptions.title(placeName)
+                          if ("homeless".equals("homeless"))
+                              markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.maps))
+                          else
+                              markerOptions.icon(
+                                  BitmapDescriptorFactory.defaultMarker(
+                                      BitmapDescriptorFactory.HUE_BLUE
+                                  )
+                              )
+
+                          markerOptions.snippet(i.toString()) // assign index
+
+                          // add marker to map
+                          mMap!!.addMarker(MarkerOptions ())
+
+                          // Move camera
+                          mMap!!.moveCamera(
+                              CameraUpdateFactory.newLatLng(latLng))
+
+                          mMap!!.animateCamera(CameraUpdateFactory.zoomTo(17f))
 
 
-                        }
-                    }
-                }
+                      }
+                  }
+              }
 
-                override fun onFailure(call: Call<MyPlaces>?, t: Throwable?) {
-                        Toast.makeText(activity, "" + t!!.message, Toast.LENGTH_SHORT).show()
-                }
-            })
-    }*/
+              override fun onFailure(call: Call<MyPlaces>?, t: Throwable?) {
+                  Toast.makeText(activity, "" + t!!.message, Toast.LENGTH_SHORT).show()
+              }
+          })
 
-   /* private fun getUrl(latitude: Double, longitude: Double, typePlace: String): String {
+  }
+    private fun getUrl(latitude: Double, longitude: Double, typePlace: String): String {
+// in future, dont append it
 
         val googlePlaceUrl = StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json")
         googlePlaceUrl.append("?keyword=homeless&location=$latitude,$longitude")
         googlePlaceUrl.append("&radius=10000") // 10 km
         googlePlaceUrl.append("&type=homeless")
         googlePlaceUrl.append("&key=AIzaSyD6GxLmTFb6A-O0MSVAQqJxZWyY5pMeFdU")
-        Log.d("URL DEBUG XXX", googlePlaceUrl.toString())
+        //Log.d("URL DEBUG XXX", googlePlaceUrl.toString())
         return googlePlaceUrl.toString()
-    }*/
-
-
+    }
     private fun buildLocationCallBack() {
         locationCallback = object : LocationCallback() {
 
@@ -281,7 +294,6 @@ class MapFragment : Fragment() {
         fusedLocationProviderClient.removeLocationUpdates(locationCallback)
         super.onStop()
     }*/
-
      @SuppressLint("MissingPermission")
       fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
@@ -304,5 +316,4 @@ class MapFragment : Fragment() {
         // Enable zoom control
         mMap!!.uiSettings.isZoomControlsEnabled=true
     }
-
 }
