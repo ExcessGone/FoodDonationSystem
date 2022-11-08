@@ -5,6 +5,7 @@ import android.location.Location
 import android.os.Build
 import android.os.Bundle
 import android.os.Looper
+import android.telecom.Connection
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +26,7 @@ import com.google.android.gms.maps.model.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.security.Security.getProperty
 
 
 class MapFragment : Fragment() {
@@ -198,15 +200,15 @@ class MapFragment : Fragment() {
           })
 
   }
-    private fun getUrl(latitude: Double, longitude: Double, typePlace: String): String {
-// in future, dont append it
 
+
+    private fun getUrl(latitude: Double, longitude: Double, typePlace: String): String {
         val googlePlaceUrl = StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json")
         googlePlaceUrl.append("?keyword=homeless&location=$latitude,$longitude")
         googlePlaceUrl.append("&radius=10000") // 10 km
         googlePlaceUrl.append("&type=homeless")
-        googlePlaceUrl.append("&key=AIzaSyD6GxLmTFb6A-O0MSVAQqJxZWyY5pMeFdU")
-        //Log.d("URL DEBUG XXX", googlePlaceUrl.toString())
+        googlePlaceUrl.append(getProperty("MAPS_API_KEY"))
+        Log.d("URL DEBUG XXX", googlePlaceUrl.toString())
         return googlePlaceUrl.toString()
     }
     private fun buildLocationCallBack() {
