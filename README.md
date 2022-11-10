@@ -1,4 +1,4 @@
-# Milestone 1 - Excess Gone
+# Excess Gone
 
 ## Table of Contents
 
@@ -92,3 +92,4 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 ## GIFs of Milestones
 
 <img src='MileStone2GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='WIP_MileStones_2&3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
