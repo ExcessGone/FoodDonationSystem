@@ -7,10 +7,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.excessgone.Adapter.MyAdapter
+import com.example.excessgone.Models.FormViewModel
 import com.example.excessgone.databinding.FragmentHistoryBinding
 
 
 class HistoryFragment : Fragment() {
+
+    private lateinit var viewModel:FormViewModel
+    private lateinit var formRV : RecyclerView
+    lateinit var adapter: MyAdapter
 
     private lateinit var binding: FragmentHistoryBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,5 +54,23 @@ class HistoryFragment : Fragment() {
         fun newInstance(): HistoryFragment {
             return HistoryFragment()
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        formRV=view.findViewById(R.id.rvForms)
+        formRV.layoutManager=LinearLayoutManager(context)
+        formRV.setHasFixedSize(true)
+        adapter = MyAdapter()
+        formRV.adapter=adapter
+
+        viewModel=ViewModelProvider(this).get(FormViewModel::class.java)
+
+        // this will be called when there is update to the list
+        viewModel.allForms.observe(viewLifecycleOwner, Observer {
+            adapter.updateFormList(it)
+        })
+
     }
 }

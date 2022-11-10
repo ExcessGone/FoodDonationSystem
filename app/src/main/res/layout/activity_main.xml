@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="mainactivity!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <RelativeLayout
         android:id="@+id/rlContainer"
@@ -28,6 +19,15 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             app:menu="@menu/menu_bottom_navigation" />
+
+        <FrameLayout
+            android:id="@+id/FrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_navigation"
+            android:layout_marginBottom="0dp">
+
+        </FrameLayout>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

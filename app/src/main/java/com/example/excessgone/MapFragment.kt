@@ -30,12 +30,16 @@ import java.security.Security.getProperty
 
 
 class MapFragment : Fragment() {
+
+    // declaring variables
     private lateinit var mMap: GoogleMap
     private lateinit var binding: FragmentMapBinding
     private var latitude:Double=0.toDouble()
     private var longitude:Double=0.toDouble()
     private lateinit var mLastLocation: Location
     private var mMarker: Marker?=null
+    lateinit var mService: IGoogleAPIService
+    internal lateinit var  currentPlace:MyPlaces
 
     // location
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
@@ -51,10 +55,9 @@ class MapFragment : Fragment() {
         private const val MY_PERMISSION_CODE : Int = 1000;
     }
 
-    //
-    lateinit var mService: IGoogleAPIService
-    internal lateinit var  currentPlace:MyPlaces
-    //
+
+
+
 
 
     @SuppressLint("MissingPermission")
@@ -319,3 +322,57 @@ class MapFragment : Fragment() {
         mMap!!.uiSettings.isZoomControlsEnabled=true
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+// ==== these are just side functions to use ==========
+//     override fun onMapReady(googleMap: GoogleMap) {
+//        mMap = googleMap
+//        val marketDetail = viewModel.market.value
+
+//        val geocoder = Geocoder(view?.context)
+//		// marketDetail.marketLocation returns a street address
+//        val geoCoderResults = geocoder.getFromLocationName(marketDetail?.marketLocation, 1)
+//        val marketDetailLatitude = geoCoderResults[0].latitude
+//        val marketDetailLongitude = geoCoderResults[0].longitude
+
+//        marketDetail?.marketLocation?.let {
+//            val loc = LatLng (marketDetailLatitude, marketDetailLongitude)
+//            mMap.addMarker(MarkerOptions().position(loc).title(marketDetail.marketName))
+//            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc,12f))
+//            mMap.uiSettings.isZoomControlsEnabled = true
+//        }
+//    }
+// =================================================
+//marketAddress.setOnClickListener {
+//
+//			// marketDetail?.marketLocation returns a valid street address
+//
+//            val gmmIntentUri =
+//                Uri.parse("google.navigation:q=${marketDetail?.marketLocation}")
+//            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+//            mapIntent.setPackage("com.google.android.apps.maps")
+//            startActivity(mapIntent)
+//        }
+// =================================================
+//  for (document in documents) {
+//                val farm = document.toObject(Markets::class.java)
+//                farmsData.add(farm)
+//                val geoCoderResults = geocoder.getFromLocationName(farm.marketLocation, 1)
+//                val marketDetailLatitude = geoCoderResults[0].latitude
+//                val marketDetailLongitude = geoCoderResults[0].longitude
+//​
+//                farm.marketLocation?.let {
+//                    val loc = LatLng (marketDetailLatitude, marketDetailLongitude)
+//                    mMap.addMarker(MarkerOptions().position(loc).title(farm.marketName))
+//                }
+//            }
+// ==================================================

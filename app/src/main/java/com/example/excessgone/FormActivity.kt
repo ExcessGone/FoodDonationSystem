@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.example.excessgone.Models.Forms
 import com.example.excessgone.databinding.ActivityFormBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.database.DatabaseReference

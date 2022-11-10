@@ -17,11 +17,13 @@
         android:layout_marginStart="300dp"
         android:layout_marginTop="600dp"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvForms"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
-
-
-<!--   <androidx.recyclerview.widget.RecyclerView-->
+    <!--   <androidx.recyclerview.widget.RecyclerView-->
 <!--        android:id="@+id/RV"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="0dp" />-->
