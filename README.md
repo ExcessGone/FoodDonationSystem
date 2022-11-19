@@ -99,7 +99,8 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 ## Contact
 
-
+- Email: nour.siwar@outlook.com
+- LinkedIn: https://www.linkedin.com/in/nour-siwar/
 
 ## Acknowledgements
 
