@@ -5,7 +5,8 @@
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
-1. [Credits](#Credits)
+1. [Contact](#Contact)
+1. [Acknowledgements](#Acknowledgements)
 
 ## Overview
 
@@ -96,7 +97,11 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 <img src='MileStone2GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width="100" height="250"/>
 <img src='WIP_MileStones_2&3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="100" height="250" />
 
-## Credits
+## Contact
+
+
+
+## Acknowledgements
 
 - [Neko Code - Form design](https://www.youtube.com/watch?v=eKVWsrNVRJA)
 - [CodePrim - Form design](https://www.youtube.com/watch?v=g_ZxWOUCbHg)
