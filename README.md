@@ -32,24 +32,37 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 - [X] Create layouts - activities & fragment: 
 * activity home has two fragments: map and history with navigation bar included. 
-* three activities: home activity, form activity, detail activity.
+* three activities: history activity, form activity, detail activity.
+* history activity: have a list of past shelters that the restaurant has donated to.
+* form activity: allow user to fill out the information about the shelter that's being donated to plus the donated food. 
+* detail activity: allow user to click on the recyclerview items in history activity to see more detailed version of the past forms. 
 
 - [ ] Use GoogleMap API to find homeles shelter near the Restaurant
-
+* setup the map on the map fragment.
+* get user's current location
+* find the nearest homeless shelters using Places API
 
 - [ ] Add database for restaurant's profile
-* Use firebase
+* Set up firebase on Android studio
+* Allow the form information to upload to firebase.
+* Allow the firebase data to get back to recyclerview. 
 * Create data to show past food given in the fragment of history
 
 
 **Stretch Features**
 
-- [ ] Chat between shelter and restaurant
+- [ ] Chat between shelter and restaurant to allow for any problems or challenges to arise and be solved.
+* "Hi [restaurant name], my shelter, [shelter name], did not get the delivery of [food being donated]."
 - [ ] Bar graph analysing types of foods being donated from different restaurants
+* For pure statistics and data gathering/collection.
 - [ ] Turn navigation bar to hamburger menu
+* Hamburger menu tends to be more aesthetic and easier to use than bottom navigation view.
 - [ ] Food API to add to list 
+* Instead of having user write out the meal type, they can select it from a drop down menu and add their own food type if needed.
 - [ ] Use common aesthetic practices such as upgrading navigation bar look.
+* Either turn navigation bar to hamburger menu, or give it an upgraded look, or add more tabs. 
 - [ ] Update the form and make it more convenient to choose a location instead of typing one.
+* Allow the form to have features such as drop down food menu or drop down location of nearest shelters.
 
 
 ### 2. Screen Archetypes
@@ -70,7 +83,7 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 **Tab Navigation** (Tab to Screen)
 
-* Home
+* Maps
 * History
 
 **Flow Navigation** (Screen to Screen)
