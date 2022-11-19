@@ -5,6 +5,7 @@
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
+1. [Credits] (#Credits)
 
 ## Overview
 
@@ -44,8 +45,11 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 - [ ] Chat between shelter and restaurant
 - [ ] Bar graph analysing types of foods being donated from different restaurants
-- [ ] turn navigation bar to hamburger menu
-- [ ] food API to add to list 
+- [ ] Turn navigation bar to hamburger menu
+- [ ] Food API to add to list 
+- [ ] Use common aesthetic practices such as upgrading navigation bar look.
+- [ ] Update the form and make it more convenient to choose a location instead of typing one.
+
 
 ### 2. Screen Archetypes
 
@@ -89,7 +93,11 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 [Add picture of your hand sketched wireframes in this section]
 <img src="wireframe.jpg" width=600>
 
-## GIFs of Milestones
+### GIFs of Milestones
 
 <img src='MileStone2GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width="250" height="400"/>
 <img src='WIP_MileStones_2&3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="250" height="400" />
+
+## Credits
+
+- [Neko Code - Form design](https://www.youtube.com/watch?v=eKVWsrNVRJA)
