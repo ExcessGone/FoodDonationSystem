@@ -95,9 +95,17 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 ### GIFs of Milestones
 
-<img src='MileStone2GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width="250" height="400"/>
-<img src='WIP_MileStones_2&3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="250" height="400" />
+<img src='MileStone2GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width="100" height="250"/>
+<img src='WIP_MileStones_2&3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="100" height="250" />
 
 ## Credits
 
 - [Neko Code - Form design](https://www.youtube.com/watch?v=eKVWsrNVRJA)
+- [CodePrim - Form design](https://www.youtube.com/watch?v=g_ZxWOUCbHg)
+- [Bersyte - Implement Camera API](https://www.youtube.com/watch?v=HjXJh_vHXFs&t=2s)
+- [Hardki Parsania - Set up Maps in Fragment](https://demonuts.com/google-map-in-fragment-kotlin/)
+- [EDMT Dev - Get nearest places video series](https://www.youtube.com/watch?v=NfF2_tr35SU)
+- [The Android Enigma - Set up Firebase](https://www.youtube.com/watch?v=YGgauhOiF1c&lc=UgzKkeLNtipZHl7Rc5Z4AaABAg.9i6g-Kx4EXI9iV3yDfMJyJ)
+- [Foxandroid - Upload Firebase data to recyclerview](https://www.youtube.com/watch?v=M8sKwoVjqU0&t=45s)
+- [Foxandroid - Upload images to Firebase](https://www.youtube.com/watch?v=g2Iibnnqga0&t=620s)
+- [Codepath - Creating and using fragments](https://guides.codepath.com/android/Creating-and-Using-Fragments)
