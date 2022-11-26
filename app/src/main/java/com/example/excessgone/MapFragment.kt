@@ -5,7 +5,6 @@ import android.location.Location
 import android.os.Build
 import android.os.Bundle
 import android.os.Looper
-import android.telecom.Connection
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +14,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.excessgone.Common.Common
-import com.example.excessgone.Model.MyPlaces
+import com.example.excessgone.API_Model.MyPlaces
 import com.example.excessgone.Remote.IGoogleAPIService
 import com.example.excessgone.databinding.FragmentMapBinding
 import com.google.android.gms.location.*
@@ -198,7 +197,7 @@ class MapFragment : Fragment() {
               }
 
               override fun onFailure(call: Call<MyPlaces>?, t: Throwable?) {
-                  Toast.makeText(activity, "" + t!!.message, Toast.LENGTH_SHORT).show()
+                 Toast.makeText(activity, "" + t!!.message, Toast.LENGTH_SHORT).show()
               }
           })
 
@@ -265,7 +264,7 @@ class MapFragment : Fragment() {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         when(requestCode)
         {
-            MY_PERMISSION_CODE->{
+            MY_PERMISSION_CODE ->{
                 if(grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                 {
                     if(activity?.let { ContextCompat.checkSelfPermission(it, android.Manifest.permission.ACCESS_FINE_LOCATION) } == PackageManager.PERMISSION_GRANTED)
@@ -293,12 +292,9 @@ class MapFragment : Fragment() {
                 }
             }
         }
-    }
 /*
-    override fun onStop(){
-        fusedLocationProviderClient.removeLocationUpdates(locationCallback)
-        super.onStop()
-    }*/
+
+ */
      @SuppressLint("MissingPermission")
       fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
@@ -322,57 +318,4 @@ class MapFragment : Fragment() {
         mMap!!.uiSettings.isZoomControlsEnabled=true
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-// ==== these are just side functions to use ==========
-//     override fun onMapReady(googleMap: GoogleMap) {
-//        mMap = googleMap
-//        val marketDetail = viewModel.market.value
-
-//        val geocoder = Geocoder(view?.context)
-//		// marketDetail.marketLocation returns a street address
-//        val geoCoderResults = geocoder.getFromLocationName(marketDetail?.marketLocation, 1)
-//        val marketDetailLatitude = geoCoderResults[0].latitude
-//        val marketDetailLongitude = geoCoderResults[0].longitude
-
-//        marketDetail?.marketLocation?.let {
-//            val loc = LatLng (marketDetailLatitude, marketDetailLongitude)
-//            mMap.addMarker(MarkerOptions().position(loc).title(marketDetail.marketName))
-//            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc,12f))
-//            mMap.uiSettings.isZoomControlsEnabled = true
-//        }
-//    }
-// =================================================
-//marketAddress.setOnClickListener {
-//
-//			// marketDetail?.marketLocation returns a valid street address
-//
-//            val gmmIntentUri =
-//                Uri.parse("google.navigation:q=${marketDetail?.marketLocation}")
-//            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-//            mapIntent.setPackage("com.google.android.apps.maps")
-//            startActivity(mapIntent)
-//        }
-// =================================================
-//  for (document in documents) {
-//                val farm = document.toObject(Markets::class.java)
-//                farmsData.add(farm)
-//                val geoCoderResults = geocoder.getFromLocationName(farm.marketLocation, 1)
-//                val marketDetailLatitude = geoCoderResults[0].latitude
-//                val marketDetailLongitude = geoCoderResults[0].longitude
-//​
-//                farm.marketLocation?.let {
-//                    val loc = LatLng (marketDetailLatitude, marketDetailLongitude)
-//                    mMap.addMarker(MarkerOptions().position(loc).title(farm.marketName))
-//                }
-//            }
-// ==================================================
+}

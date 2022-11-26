@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple_200"
+            android:background="@color/android_green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -33,7 +33,7 @@
             android:layout_marginRight="16dp"
             android:hint="shelter name"
             app:helperText="required"
-            app:helperTextTextColor="@color/purple_200"
+            app:helperTextTextColor="@color/android_green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -56,7 +56,7 @@
             android:layout_marginRight="16dp"
             android:hint="phone number"
             app:helperText="required"
-            app:helperTextTextColor="@color/purple_200"
+            app:helperTextTextColor="@color/android_green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textShelterNameInputLayout"
@@ -79,7 +79,7 @@
             android:layout_marginRight="16dp"
             android:hint="address"
             app:helperText="required"
-            app:helperTextTextColor="@color/purple_200"
+            app:helperTextTextColor="@color/android_green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textPhoneInputLayout"
@@ -102,7 +102,7 @@
             android:layout_marginRight="16dp"
             android:hint="food type"
             app:helperText="required"
-            app:helperTextTextColor="@color/purple_200"
+            app:helperTextTextColor="@color/android_green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textAddressInputLayout"
@@ -115,6 +115,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:backgroundTint="@color/android_green"
             android:id="@+id/submitBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -135,7 +136,7 @@
             android:layout_marginBottom="200dp"
             android:background="@drawable/roundstyle"
             android:src="@drawable/camera"
-            android:backgroundTint="@color/purple_200"
+            android:backgroundTint="@color/android_green"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -148,6 +149,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textFoodInputLayout"
             app:srcCompat="@drawable/food"
+
             app:startIconDrawable="@drawable/food" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

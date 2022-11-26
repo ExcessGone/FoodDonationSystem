@@ -6,7 +6,8 @@ import android.text.TextUtils
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.example.excessgone.Models.Forms
+import com.example.excessgone.Repository.FirebaseStorageManager
+import com.example.excessgone.Form_Models.Forms
 import com.example.excessgone.databinding.ActivityFormBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.database.DatabaseReference
@@ -82,7 +83,7 @@ class FormActivity : AppCompatActivity() {
 
         if(resultCode == Activity.RESULT_OK){
             when(requestCode){
-                REQUEST_FROM_CAMERA->{
+                REQUEST_FROM_CAMERA ->{
                     binding.imageFood.setImageURI(data!!.data)
                     FirebaseStorageManager().uploadImage(this, data.data!!)
                 }

@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HistoryFragment">
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HistoryFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvForms"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="55dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <ImageButton
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/android_green"
         android:background="@drawable/roundstyle"
         android:id="@+id/addForm"
         android:layout_height="50dp"
@@ -15,17 +23,7 @@
         android:src="@drawable/add"
         android:layout_width="50dp"
         android:layout_marginStart="300dp"
-        android:layout_marginTop="600dp"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvForms"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-
-    <!--   <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/RV"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp" />-->
+        android:layout_marginTop="600dp"
+        android:alpha="0.75"/>
 
 </FrameLayout>

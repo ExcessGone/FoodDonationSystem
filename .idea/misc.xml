@@ -3,15 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/drawable/add.xml" value="0.1" />
+        <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/drawable/camera.xml" value="0.1775" />
+        <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/drawable/food.xml" value="0.1775" />
+        <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/drawable/history.xml" value="0.1775" />
+        <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/drawable/loc.xml" value="0.1" />
         <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/drawable/location.xml" value="0.1" />
         <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/drawable/maps.xml" value="0.1" />
+        <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/drawable/phone.xml" value="0.1" />
         <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/drawable/roundstyle.xml" value="0.1" />
+        <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/layout/activity_detail.xml" value="0.22" />
         <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/layout/activity_form.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/layout/camera_test.xml" value="0.22" />
-        <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/layout/form_item.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/layout/form_item.xml" value="0.22" />
         <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/layout/fragment_history.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/layout/fragment_map.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/nours/AndroidStudioProjects/ExcessGone/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.16927083333333334" />

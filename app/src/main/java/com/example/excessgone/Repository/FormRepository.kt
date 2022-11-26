@@ -1,7 +1,7 @@
 package com.example.excessgone.Repository
 
 import androidx.lifecycle.MutableLiveData
-import com.example.excessgone.Models.Forms
+import com.example.excessgone.Form_Models.Forms
 import com.google.firebase.database.*
 
 class FormRepository {

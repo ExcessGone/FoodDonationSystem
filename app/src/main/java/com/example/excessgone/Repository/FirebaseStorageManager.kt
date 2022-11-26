@@ -1,4 +1,4 @@
-package com.example.excessgone
+package com.example.excessgone.Repository
 
 import android.app.ProgressDialog
 import android.content.Context
@@ -15,7 +15,7 @@ class FirebaseStorageManager {
 
         mProfessDialog = ProgressDialog(mContext)
         mProfessDialog.setMessage("Please wait, image is uploading....")
-        val uploadTask = mStorageRef.child("forms/foodTypeImage.png").putFile(imageURI)
+        val uploadTask = mStorageRef.child("forms/imageFood.png").putFile(imageURI)
         uploadTask.addOnSuccessListener {
             //success
             Log.e(TAG, "IMAGE UPLOADED")
