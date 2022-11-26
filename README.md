@@ -126,3 +126,4 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 - [Foxandroid - Upload Firebase data to recyclerview](https://www.youtube.com/watch?v=M8sKwoVjqU0&t=45s)
 - [Foxandroid - Upload images to Firebase](https://www.youtube.com/watch?v=g2Iibnnqga0&t=620s)
 - [Codepath - Creating and using fragments](https://guides.codepath.com/android/Creating-and-Using-Fragments)
+- [Phillip Lackner - Retrieving image from Firebase Storage](https://www.youtube.com/watch?v=g04l2nH5M80&t=132s)
