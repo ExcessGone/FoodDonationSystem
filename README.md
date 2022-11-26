@@ -1,10 +1,12 @@
-# Milestone 1 - Excess Gone
+# Excess Gone
 
 ## Table of Contents
 
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
+1. [Contact](#Contact)
+1. [Acknowledgements](#Acknowledgements)
 
 ## Overview
 
@@ -30,22 +32,38 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 - [X] Create layouts - activities & fragment: 
 * activity home has two fragments: map and history with navigation bar included. 
-* three activities: home activity, form activity, detail activity.
+* three activities: history activity, form activity, detail activity.
+* history activity: have a list of past shelters that the restaurant has donated to.
+* form activity: allow user to fill out the information about the shelter that's being donated to plus the donated food. 
+* detail activity: allow user to click on the recyclerview items in history activity to see more detailed version of the past forms. 
 
 - [ ] Use GoogleMap API to find homeles shelter near the Restaurant
-
+* setup the map on the map fragment.
+* get user's current location
+* find the nearest homeless shelters using Places API
 
 - [ ] Add database for restaurant's profile
-* Use firebase
+* Set up firebase on Android studio
+* Allow the form information to upload to firebase.
+* Allow the firebase data to get back to recyclerview. 
 * Create data to show past food given in the fragment of history
 
 
 **Stretch Features**
 
-- [ ] Chat between shelter and restaurant
+- [ ] Chat between shelter and restaurant to allow for any problems or challenges to arise and be solved.
+* "Hi [restaurant name], my shelter, [shelter name], did not get the delivery of [food being donated]."
 - [ ] Bar graph analysing types of foods being donated from different restaurants
-- [ ] turn navigation bar to hamburger menu
-- [ ] food API to add to list 
+* For pure statistics and data gathering/collection.
+- [ ] Turn navigation bar to hamburger menu
+* Hamburger menu tends to be more aesthetic and easier to use than bottom navigation view.
+- [ ] Food API to add to list 
+* Instead of having user write out the meal type, they can select it from a drop down menu and add their own food type if needed.
+- [ ] Use common aesthetic practices such as upgrading navigation bar look.
+* Either turn navigation bar to hamburger menu, or give it an upgraded look, or add more tabs. 
+- [ ] Update the form and make it more convenient to choose a location instead of typing one.
+* Allow the form to have features such as drop down food menu or drop down location of nearest shelters.
+
 
 ### 2. Screen Archetypes
 
@@ -65,7 +83,7 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 **Tab Navigation** (Tab to Screen)
 
-* Home
+* Maps
 * History
 
 **Flow Navigation** (Screen to Screen)
@@ -85,10 +103,27 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 
 ## Wireframes
-
-[Add picture of your hand sketched wireframes in this section]
 <img src="wireframe.jpg" width=600>
 
-## GIFs of Milestones
+### GIFs of Milestones
 
-<img src='MileStone2GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='MileStone2GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width="100" height="250"/>
+<img src='WIP_MileStones_2&3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="100" height="250" />
+
+## Contact
+
+- Email: nour.siwar@outlook.com
+- LinkedIn: https://www.linkedin.com/in/nour-siwar/
+
+## Acknowledgements
+
+- [Neko Code - Form design](https://www.youtube.com/watch?v=eKVWsrNVRJA)
+- [CodePrim - Form design](https://www.youtube.com/watch?v=g_ZxWOUCbHg)
+- [Bersyte - Implement Camera API](https://www.youtube.com/watch?v=HjXJh_vHXFs&t=2s)
+- [Hardki Parsania - Set up Maps in Fragment](https://demonuts.com/google-map-in-fragment-kotlin/)
+- [EDMT Dev - Get nearest places video series](https://www.youtube.com/watch?v=NfF2_tr35SU)
+- [The Android Enigma - Set up Firebase](https://www.youtube.com/watch?v=YGgauhOiF1c&lc=UgzKkeLNtipZHl7Rc5Z4AaABAg.9i6g-Kx4EXI9iV3yDfMJyJ)
+- [Foxandroid - Upload Firebase data to recyclerview](https://www.youtube.com/watch?v=M8sKwoVjqU0&t=45s)
+- [Foxandroid - Upload images to Firebase](https://www.youtube.com/watch?v=g2Iibnnqga0&t=620s)
+- [Codepath - Creating and using fragments](https://guides.codepath.com/android/Creating-and-Using-Fragments)
+- [Philipp Lackner - Retrieving image from Firebase Storage](https://www.youtube.com/watch?v=g04l2nH5M80&t=132s)
