@@ -39,14 +39,16 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 - [ ] Use GoogleMap API to find homeles shelter near the Restaurant
 * setup the map on the map fragment.
-* get user's current location
-* find the nearest homeless shelters using Places API
+* get user's current location.
+* find the nearest homeless shelters using Places API.
+* add shelter information on the map marker of each shelter near the user.
 
 - [ ] Add database for restaurant's profile
 * Set up firebase on Android studio
-* Allow the form information to upload to firebase.
-* Allow the firebase data to get back to recyclerview. 
-* Create data to show past food given in the fragment of history
+* Allow the form information to upload to firebase, including food image.
+* Allow the firebase data to get back to recyclerview, including food image. 
+* Create data to show past food given in the fragment of history.
+* Organize data in card view models showing only the shelter restaurant and the food donated, then allow user to press on each card to get into the detail of what they submitted to the shelter.
 
 
 **Stretch Features**
