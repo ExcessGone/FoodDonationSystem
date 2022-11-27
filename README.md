@@ -129,4 +129,4 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 - [Codepath - Creating and using Fragments](https://guides.codepath.com/android/Creating-and-Using-Fragments)
 - [Philipp Lackner - Retrieving image from Firebase Storage](https://www.youtube.com/watch?v=g04l2nH5M80&t=132s)
 - [CodingZest - Adding a ClickListener on RecyclerView Item with Firebase Realtime DB](https://www.youtube.com/watch?v=0oOC9cdN2I0)
-- [eeshan Academy - Solving black screen emulator error](https://www.youtube.com/watch?v=0fk47QksSeA&t=145s)
+- [Zeeshan Academy - Solving black screen emulator error](https://www.youtube.com/watch?v=0fk47QksSeA&t=145s)
