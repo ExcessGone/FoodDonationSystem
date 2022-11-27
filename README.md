@@ -131,3 +131,4 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 - [CodingZest - Adding a ClickListener on RecyclerView Item with Firebase Realtime DB](https://www.youtube.com/watch?v=0oOC9cdN2I0)
 - [Zeeshan Academy - Solving black screen emulator error](https://www.youtube.com/watch?v=0fk47QksSeA&t=145s)
 - [Technical Skillz - Adding zoom controls to Maps](https://www.youtube.com/watch?v=Cz8MVEV8rZ4)
+- [Converst JSON to C# - Retrieving nearby places from Places Api and converting to C# code](https://json2csharp.com/)
