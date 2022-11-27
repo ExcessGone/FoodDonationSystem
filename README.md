@@ -110,9 +110,9 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 ### GIFs of Milestones & Progress
 * Gifs created with [ScreenToGif](https://www.screentogif.com/)
 
-<img src='MileStone2GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width="100" height="250"/>
-<img src='WIP_MileStones_2&3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="100" height="250" />
-<img src='MileStones_DetailActivity&Aesthetic.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="200" height="450" />
+<img src='Part1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width="200" height="450"/>
+<img src='Part2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="200" height="450" />
+<img src='Part3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="200" height="450" />
 
 ## Contact
 
