@@ -135,3 +135,4 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 - [Zeeshan Academy - Solving black screen emulator error](https://www.youtube.com/watch?v=0fk47QksSeA&t=145s)
 - [Technical Skillz - Adding zoom controls to Maps](https://www.youtube.com/watch?v=Cz8MVEV8rZ4)
 - [Convert JSON to C# - Retrieving nearby places from Places Api and converting to C# code](https://json2csharp.com/)
+- [R4GE VipeRzZ - Separating Emulator from A.S.](https://www.youtube.com/watch?v=S3hyNE2D71g)
