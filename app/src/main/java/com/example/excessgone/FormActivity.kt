@@ -21,6 +21,7 @@ class FormActivity : AppCompatActivity() {
         const val REQUEST_FROM_CAMERA = 1001
     }
 
+    // variables
     private var storage: StorageReference? = null
     private lateinit var database : DatabaseReference
     private lateinit var binding : ActivityFormBinding
@@ -29,16 +30,19 @@ class FormActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)
 
+        // binding instead of using ViewById
         binding = ActivityFormBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-      storage = FirebaseStorage.getInstance().reference
+        storage = FirebaseStorage.getInstance().reference
         database = FirebaseDatabase.getInstance().getReference("Forms")
-        binding = ActivityFormBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-       binding = DataBindingUtil.setContentView(this, R.layout.activity_form)
 
-        initUI()
+        // for calling the Camera API
+        binding.pictureBtn.setOnClickListener{
+            captureImageUsingCamera()
+        }
+
+        // validating the form, making sure the user does not enter an empty form.
         binding.submitBtn.setOnClickListener {
             if (TextUtils.isEmpty(binding.textShelterNameField.text.toString())) {
                 binding.textShelterNameInputLayout.error = "Enter Name"
@@ -77,6 +81,8 @@ class FormActivity : AppCompatActivity() {
             }
         }
 
+
+    // Function for Camera API, to take picture of the food donated.
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -90,13 +96,7 @@ class FormActivity : AppCompatActivity() {
             }
         }
     }
-
-    private fun initUI() {
-        binding.pictureBtn.setOnClickListener{
-            captureImageUsingCamera()
-        }
-    }
-
+    // retrieved from ImagePicker github, allowing to crop stories
     private fun captureImageUsingCamera(){
         ImagePicker.with(this).cameraOnly().crop().start(REQUEST_FROM_CAMERA)
     }

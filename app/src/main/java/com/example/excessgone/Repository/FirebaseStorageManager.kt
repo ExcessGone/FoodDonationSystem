@@ -6,6 +6,8 @@ import android.net.Uri
 import android.util.Log
 import com.google.firebase.storage.FirebaseStorage
 
+// this class takes care of the Camera API,
+// responsible for uploading the image, making sure it gets to Firebase DB
 class FirebaseStorageManager {
     private val mStorageRef = FirebaseStorage.getInstance().reference
     private lateinit var mProfessDialog : ProgressDialog
@@ -17,9 +19,10 @@ class FirebaseStorageManager {
         mProfessDialog.setMessage("Please wait, image is uploading....")
         val uploadTask = mStorageRef.child("forms/imageFood.png").putFile(imageURI)
         uploadTask.addOnSuccessListener {
-            //success
+            //success test case
             Log.e(TAG, "IMAGE UPLOADED")
         }.addOnFailureListener{
+            // failed test case
             Log.e(TAG, "IMAGE FAILED")
         }
     }
