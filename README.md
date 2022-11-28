@@ -39,14 +39,16 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 - [ ] Use GoogleMap API to find homeles shelter near the Restaurant
 * setup the map on the map fragment.
-* get user's current location
-* find the nearest homeless shelters using Places API
+* get user's current location.
+* find the nearest homeless shelters using Places API.
+* add shelter information on the map marker of each shelter near the user.
 
 - [ ] Add database for restaurant's profile
 * Set up firebase on Android studio
-* Allow the form information to upload to firebase.
-* Allow the firebase data to get back to recyclerview. 
-* Create data to show past food given in the fragment of history
+* Allow the form information to upload to firebase, including food image.
+* Allow the firebase data to get back to recyclerview, including food image. 
+* Create data to show past food given in the fragment of history.
+* Organize data in card view models showing only the shelter restaurant and the food donated, then allow user to press on each card to get into the detail of what they submitted to the shelter.
 
 
 **Stretch Features**
@@ -105,10 +107,12 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 ## Wireframes
 <img src="wireframe.jpg" width=600>
 
-### GIFs of Milestones
+### GIFs of Milestones & Progress
+* Gifs created with [ScreenToGif](https://www.screentogif.com/)
 
-<img src='MileStone2GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width="100" height="250"/>
-<img src='WIP_MileStones_2&3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="100" height="250" />
+<img src='Part1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width="200" height="450"/>
+<img src='Part2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="200" height="450" />
+<img src='Part3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="200" height="450" />
 
 ## Contact
 
@@ -117,13 +121,18 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 ## Acknowledgements
 
-- [Neko Code - Form design](https://www.youtube.com/watch?v=eKVWsrNVRJA)
+- [Neko Code - Form Design](https://www.youtube.com/watch?v=eKVWsrNVRJA)
 - [CodePrim - Form design](https://www.youtube.com/watch?v=g_ZxWOUCbHg)
-- [Bersyte - Implement Camera API](https://www.youtube.com/watch?v=HjXJh_vHXFs&t=2s)
-- [Hardki Parsania - Set up Maps in Fragment](https://demonuts.com/google-map-in-fragment-kotlin/)
-- [EDMT Dev - Get nearest places video series](https://www.youtube.com/watch?v=NfF2_tr35SU)
-- [The Android Enigma - Set up Firebase](https://www.youtube.com/watch?v=YGgauhOiF1c&lc=UgzKkeLNtipZHl7Rc5Z4AaABAg.9i6g-Kx4EXI9iV3yDfMJyJ)
-- [Foxandroid - Upload Firebase data to recyclerview](https://www.youtube.com/watch?v=M8sKwoVjqU0&t=45s)
-- [Foxandroid - Upload images to Firebase](https://www.youtube.com/watch?v=g2Iibnnqga0&t=620s)
-- [Codepath - Creating and using fragments](https://guides.codepath.com/android/Creating-and-Using-Fragments)
+- [Bersyte - Implementing Camera API](https://www.youtube.com/watch?v=HjXJh_vHXFs&t=2s)
+- [Hardki Parsania - Setting up Maps in Fragment](https://demonuts.com/google-map-in-fragment-kotlin/)
+- [EDMT Dev - Getting nearest places video series](https://www.youtube.com/watch?v=NfF2_tr35SU)
+- [The Android Enigma - Setting up Firebase](https://www.youtube.com/watch?v=YGgauhOiF1c&lc=UgzKkeLNtipZHl7Rc5Z4AaABAg.9i6g-Kx4EXI9iV3yDfMJyJ)
+- [Foxandroid - Uploading Firebase data to Recyclerview](https://www.youtube.com/watch?v=M8sKwoVjqU0&t=45s)
+- [Foxandroid - Uploading images to Firebase](https://www.youtube.com/watch?v=g2Iibnnqga0&t=620s)
+- [Codepath - Creating and using Fragments](https://guides.codepath.com/android/Creating-and-Using-Fragments)
 - [Philipp Lackner - Retrieving image from Firebase Storage](https://www.youtube.com/watch?v=g04l2nH5M80&t=132s)
+- [CodingZest - Adding a ClickListener on RecyclerView Item with Firebase Realtime DB](https://www.youtube.com/watch?v=0oOC9cdN2I0)
+- [Zeeshan Academy - Solving black screen emulator error](https://www.youtube.com/watch?v=0fk47QksSeA&t=145s)
+- [Technical Skillz - Adding zoom controls to Maps](https://www.youtube.com/watch?v=Cz8MVEV8rZ4)
+- [Convert JSON to C# - Retrieving nearby places from Places Api and converting to C# code](https://json2csharp.com/)
+- [R4GE VipeRzZ - Separating Emulator from A.S.](https://www.youtube.com/watch?v=S3hyNE2D71g)

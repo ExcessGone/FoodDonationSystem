@@ -10,24 +10,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.excessgone.Form_Models.Forms
 
-class FormAdapter(private val formList: ArrayList<Forms>) : RecyclerView.Adapter<FormAdapter.MyViewHolder>(){
+class FormAdapter : RecyclerView.Adapter<FormAdapter.MyViewHolder>(){
 
-    private lateinit var mListener: onItemClickListener
-
-    interface onItemClickListener{
-        fun onItemClick(position: Int)
-    }
-
-    fun setOnItemClickListener(clickListener: onItemClickListener){
-        mListener = clickListener
-    }
+    private val formList = ArrayList<Forms>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.form_item,
             parent, false
         )
-        return MyViewHolder(itemView, mListener)
+        return MyViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -45,20 +37,16 @@ class FormAdapter(private val formList: ArrayList<Forms>) : RecyclerView.Adapter
         notifyDataSetChanged()
     }
 
-    inner class MyViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
+    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
          val shelterNameTextView: TextView = itemView.findViewById(R.id.nameField)
 
-        init{
-            itemView.setOnClickListener{
-                clickListener.onItemClick(adapterPosition)
-            }
-        }
     }
 }
 
 
 /*package com.example.excessgone.Adapter
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
