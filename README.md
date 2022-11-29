@@ -128,6 +128,7 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 - [EDMT Dev - Getting nearest places video series](https://www.youtube.com/watch?v=NfF2_tr35SU)
 - [The Android Enigma - Setting up Firebase](https://www.youtube.com/watch?v=YGgauhOiF1c&lc=UgzKkeLNtipZHl7Rc5Z4AaABAg.9i6g-Kx4EXI9iV3yDfMJyJ)
 - [Foxandroid - Uploading Firebase data to Recyclerview](https://www.youtube.com/watch?v=M8sKwoVjqU0&t=45s)
+- [Foxandroid - Retrieving firebase into recylcerview](https://www.youtube.com/watch?v=qWwJLhlKM-s&t=66s)
 - [Foxandroid - Uploading images to Firebase](https://www.youtube.com/watch?v=g2Iibnnqga0&t=620s)
 - [Codepath - Creating and using Fragments](https://guides.codepath.com/android/Creating-and-Using-Fragments)
 - [Philipp Lackner - Retrieving image from Firebase Storage](https://www.youtube.com/watch?v=g04l2nH5M80&t=132s)
