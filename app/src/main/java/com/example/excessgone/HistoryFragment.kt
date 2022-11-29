@@ -16,12 +16,11 @@ import com.example.excessgone.databinding.FragmentHistoryBinding
 
 class HistoryFragment : Fragment() {
 
-
-// declare variables
-    private lateinit var binding: FragmentHistoryBinding
+    // declaring variables
     private lateinit var viewModel:FormViewModel
     lateinit var adapter: FormAdapter
-    private var formList = arrayListOf<Forms>()
+    private lateinit var binding: FragmentHistoryBinding
+    private var formList : ArrayList<Forms> = arrayListOf<Forms>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +37,8 @@ class HistoryFragment : Fragment() {
         binding = FragmentHistoryBinding.inflate(layoutInflater)
         val view = binding.root
 
+        // line 39 - 42 allows the History fragment to move to
+        // the form by pressing the add button.
         binding.addForm.setOnClickListener {
             val i = Intent(activity, FormActivity::class.java)
             activity?.startActivity(i)
@@ -58,15 +59,23 @@ class HistoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        // this is responsible for positioning the items and
         binding.rvForms.layoutManager=LinearLayoutManager(context)
+
+        // because this is true, the adapter's height and width wont
+        // change constantly and unnecessarily.
+        // This is also better than using requestLayout
         binding.rvForms.setHasFixedSize(true)
+
+        // defining the variable adapter and assigning the layout
+        // to the adapter (backend with frontend)
         adapter = FormAdapter(formList)
         binding.rvForms.adapter=adapter
 
+        // this is for the DetailedActivity transition from history
         adapter.setOnItemClickListener(object : FormAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-               val intent = Intent(activity, DetailActivity::class.java)
-
+                val intent = Intent(activity, DetailActivity::class.java)
                 // put extras
                 intent.putExtra("name", formList[position].shelterName)
                 intent.putExtra("food", formList[position].foodType)
@@ -77,10 +86,12 @@ class HistoryFragment : Fragment() {
 
         })
 
-        viewModel=ViewModelProvider(this).get(FormViewModel::class.java)
+        // creating object of ViewModel
+        viewModel= ViewModelProvider(this)[FormViewModel::class.java]
 
-        // this will be called when there is update to the list
+        // this will be used when there is update to the list
         viewModel.allForms.observe(viewLifecycleOwner, Observer {
+            // callback method for any change in the data.
             adapter.updateFormList(it)
         })
 

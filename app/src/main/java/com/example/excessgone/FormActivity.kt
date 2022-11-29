@@ -22,7 +22,6 @@ class FormActivity : AppCompatActivity() {
     }
 
     // variables
-    private var storage: StorageReference? = null
     private lateinit var database : DatabaseReference
     private lateinit var binding : ActivityFormBinding
 
@@ -31,10 +30,8 @@ class FormActivity : AppCompatActivity() {
         setContentView(R.layout.activity_form)
 
         // binding instead of using ViewById
-        binding = ActivityFormBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_form)
 
-        storage = FirebaseStorage.getInstance().reference
         database = FirebaseDatabase.getInstance().getReference("Forms")
 
         // for calling the Camera API
@@ -64,6 +61,7 @@ class FormActivity : AppCompatActivity() {
                 val foodType = binding.textFoodField.text.toString()
                 val form = Forms(shelterName, phoneNum, address, foodType)
 
+                // this is where the data is all written to Firebase
                     database.child(shelterName).setValue(form).addOnSuccessListener {
 
                         binding.textShelterNameField.text?.clear()
@@ -91,6 +89,7 @@ class FormActivity : AppCompatActivity() {
             when(requestCode){
                 REQUEST_FROM_CAMERA ->{
                     binding.imageFood.setImageURI(data!!.data)
+                    // this is where the image is uploaded to firebase
                     FirebaseStorageManager().uploadImage(this, data.data!!)
                 }
             }

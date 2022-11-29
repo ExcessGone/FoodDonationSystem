@@ -6,6 +6,8 @@ import android.net.Uri
 import android.util.Log
 import com.google.firebase.storage.FirebaseStorage
 
+// this class needs to be worked on as the Camera picture is overriden
+
 // this class takes care of the Camera API,
 // responsible for uploading the image, making sure it gets to Firebase DB
 class FirebaseStorageManager {

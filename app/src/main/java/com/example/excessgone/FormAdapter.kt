@@ -10,73 +10,64 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.excessgone.Form_Models.Forms
 
-class FormAdapter : RecyclerView.Adapter<FormAdapter.MyViewHolder>(){
+class FormAdapter(private val formList:ArrayList<Forms>) : RecyclerView.Adapter<FormAdapter.MyViewHolder>(){
 
-    private val formList = ArrayList<Forms>()
+    // declare variables
+    private lateinit var mListener: onItemClickListener
+
+    // this interface is for transitioning to detailed part of the form
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(clickListener: onItemClickListener){
+        mListener = clickListener
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.form_item,
             parent, false
         )
-        return MyViewHolder(itemView)
+        return MyViewHolder(itemView, mListener)
     }
 
+    // this function takes in the ViewHolder class and the index position
+    // of the arrayList
+
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
+        // currentItem signifies the value of the current index in the arrayList
         val currentItem = formList[position]
+
+        // this is the data being transferred each time the function gets called
         holder.shelterNameTextView.text=currentItem.shelterName
     }
 
+    // returning the size of the arrayList
     override fun getItemCount(): Int {
         return formList.size
     }
 
+    // updating the List for new information
     fun updateFormList(formList : List<Forms>){
         this.formList.clear()
         this.formList.addAll(formList)
         notifyDataSetChanged()
     }
 
-    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    //this function holds the data that will be transferred to the recylcerview.
+    // in this case, the data used here is just the shelter name.
+    class MyViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
+
 
          val shelterNameTextView: TextView = itemView.findViewById(R.id.nameField)
 
+        init{
+            itemView.setOnClickListener{
+                clickListener.onItemClick(absoluteAdapterPosition)
+            }
+        }
+
     }
 }
-
-
-/*package com.example.excessgone.Adapter
-
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.excessgone.R
-import kotlinx.android.synthetic.main.form_item.view.*
-
-class MyAdapter(
-    private val urls: List<String>
-) : RecyclerView.Adapter<MyAdapter.ImageViewHolder>() {
-    inner class ImageViewHolder(itemView:View):RecyclerView.ViewHolder(itemView)
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-        return ImageViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.form_item,
-                parent,
-                false
-            )
-        )
-    }
-
-    override fun getItemCount(): Int {
-        return urls.size
-    }
-
-    override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        val url = urls[position]
-        Glide.with(holder.itemView).load(url).into(holder.itemView.foodImage)
-    }
-}
-*/
