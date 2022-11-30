@@ -1,3 +1,17 @@
+// Attached: HistoryFragment.kt
+// =============================================================================
+//
+// Programmer: Nour Siwar
+// Class: Android Development
+// Instructor: CodePath
+//
+// =============================================================================
+// Program: HistoryFragment class
+// =============================================================================
+// Description:
+// This class is the fragment of main activity that takes care of past food donated
+// to past shelters.
+// =============================================================================
 package com.example.excessgone
 
 import android.content.Intent

@@ -1,3 +1,17 @@
+// Attached: MainActivity.kt
+// =============================================================================
+//
+// Programmer: Nour Siwar
+// Class: Android Development
+// Instructor: CodePath
+//
+// =============================================================================
+// Program: MainActivity class
+// =============================================================================
+// Description:
+// This is the main class, and it holds two fragments, the map and history.
+// This class is responsible for switching between those fragments.
+// =============================================================================
 package com.example.excessgone
 
 import androidx.appcompat.app.AppCompatActivity

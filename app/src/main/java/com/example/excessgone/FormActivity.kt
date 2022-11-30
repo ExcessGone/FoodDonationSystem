@@ -1,3 +1,18 @@
+// Attached: FormActivity.kt
+// =============================================================================
+//
+// Programmer: Nour Siwar
+// Class: Android Development
+// Instructor: CodePath
+//
+// =============================================================================
+// Program: FormActivity class
+// =============================================================================
+// Description:
+// This class is responsible for the form section, in which the user fills out
+// information about the shelter and the food they are donating.
+// =============================================================================
+
 package com.example.excessgone
 import android.app.Activity
 import android.content.Intent

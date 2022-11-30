@@ -1,3 +1,18 @@
+// Attached: DetailActivity.kt
+// =============================================================================
+//
+// Programmer: Nour Siwar
+// Class: Android Development
+// Instructor: CodePath
+//
+// =============================================================================
+// Program: DetailActivity class
+// =============================================================================
+// Description:
+// This class is the one responsible for communicating with activity_detail.xml.
+// When the user presses on any form loaded in recyclerview, this class is in action.
+// =============================================================================
+
 package com.example.excessgone
 
 import android.os.Bundle

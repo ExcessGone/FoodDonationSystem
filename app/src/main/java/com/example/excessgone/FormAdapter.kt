@@ -1,3 +1,18 @@
+// Attached: FormAdapter.kt
+// =============================================================================
+//
+// Programmer: Nour Siwar
+// Class: Android Development
+// Instructor: CodePath
+//
+// =============================================================================
+// Program: FormAdapter class
+// =============================================================================
+// Description:
+// Adapter is part of the recyclerview process. This class is responsible for
+// retrieving the items, and loading up on the UI of the History Fragment.
+// =============================================================================
+
 package com.example.excessgone
 
 import android.content.Intent

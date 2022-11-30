@@ -1,4 +1,22 @@
-
+// Attached: MapFragment.kt
+// =============================================================================
+//
+// Programmer: Nour Siwar
+// Class: Android Development
+// Instructor: CodePath
+//
+// =============================================================================
+// Program: MapFragment class
+// =============================================================================
+// Description:
+//
+// Note: This class is still WIP for retrieving nearby places.
+//
+// This class is another fragment of main activity, and it is responsible for
+// setting up the map, retrieving current user's location, and retrieving
+// near by homeless shelters.
+//
+// =============================================================================
 package com.example.excessgone
 import android.os.Bundle
 import android.view.LayoutInflater

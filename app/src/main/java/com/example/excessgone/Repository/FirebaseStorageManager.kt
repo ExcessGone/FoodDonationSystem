@@ -1,3 +1,19 @@
+// Attached: FirebaseStorageManager.kt
+// =============================================================================
+//
+// Programmer: Nour Siwar
+// Class: Android Development
+// Instructor: CodePath
+//
+// =============================================================================
+// Program: FirebaseStorageManager class
+// =============================================================================
+// Description:
+// Note: This class needs to be worked on as the Camera picture is overriden
+//
+// This class takes care of the Camera API, and is responsible for uploading
+// the image, making sure it gets to Firebase DB
+// =============================================================================
 package com.example.excessgone.Repository
 
 import android.app.ProgressDialog
@@ -6,10 +22,7 @@ import android.net.Uri
 import android.util.Log
 import com.google.firebase.storage.FirebaseStorage
 
-// this class needs to be worked on as the Camera picture is overriden
 
-// this class takes care of the Camera API,
-// responsible for uploading the image, making sure it gets to Firebase DB
 class FirebaseStorageManager {
     private val mStorageRef = FirebaseStorage.getInstance().reference
     private lateinit var mProfessDialog : ProgressDialog
