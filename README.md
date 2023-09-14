@@ -14,6 +14,11 @@
 
 This app will allow to decrease food wastage, by connecting resaurants with homeless shelters to donate excess food to the homeless people, resulting in a good idea to solve the issue of hunger and food insecurity among the homeless. 
 
+### GIFs of Milestones & Progress
+* Gifs created with [ScreenToGif](https://www.screentogif.com/)
+
+<img src='Part1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width="200" height="450"/> <img src='Part2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="200" height="450" /> <img src='Part3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="200" height="450" />
+
 ### App Evaluation
 
 
@@ -106,11 +111,6 @@ This app will allow to decrease food wastage, by connecting resaurants with home
 
 ## Wireframes
 <img src="wireframe.jpg" width=600>
-
-### GIFs of Milestones & Progress
-* Gifs created with [ScreenToGif](https://www.screentogif.com/)
-
-<img src='Part1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width="200" height="450"/> <img src='Part2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="200" height="450" /> <img src='Part3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'  width="200" height="450" />
 
 ## Contact
 
